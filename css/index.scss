@@ -2,7 +2,7 @@
 @import 'modal.scss';
 
 
-@media (max-width: 768px) {
+body.mobile{
     .w1280 {
         width: 100%;
     }
@@ -71,7 +71,7 @@
 
     #sec1 {
         width: 100%;
-        height: calc(var(--vh, 1vh) * 90);
+        height: calc(var(--vh, 1vh) * 100);
         background: linear-gradient(#2b32b2, #1488cc);
         position: relative;
 
@@ -1112,8 +1112,8 @@
             background: #fefefe;
 
             &.active {
-                width: 90%;
-                transform: skewX(10deg) translateX(-50%);
+                width: 100%;
+                transform: skewX(1deg) translateX(-50%);
             }
         }
 
@@ -1122,8 +1122,8 @@
             width: 70px;
             height: 70px;
             position: absolute;
-            right: 10%;
-            top: 10%;
+            right: 3%;
+            top: 5%;
             z-index: 102;
             cursor: pointer;
 
@@ -1193,7 +1193,7 @@
     }
 
     .profile-detail .content-box {
-        width: 1100px;
+        width: 100%;
         margin: 0 auto;
         position: relative;
         z-index: 101;
@@ -1239,13 +1239,13 @@
             position: relative;
 
             .hiddenCont {
-                width: 1100px;
+                width: 100%;
                 height: 100%;
                 padding-top: 10rem;
                 overflow-y: scroll;
 
                 .alignCont {
-                    width: 80%;
+                    width: 92%;
                     margin: 0 auto;
                 }
             }
@@ -1255,13 +1255,12 @@
             letter-spacing: -0.05em;
 
             h2 {
-                font-size: 1.8rem;
+                font-size: 3.6rem;
                 font-family: $gM;
                 padding-bottom: .5rem;
             }
 
             p {
-                font-size: 1.6rem;
                 letter-spacing: -0.05em;
                 line-height: 1.75;
             }
@@ -1284,9 +1283,25 @@
         }
     }
 
+    .greetings{
+        p{
+            font-size: 2.4rem;
+        }
+    }
+
+    .startReason{
+        p{
+            font-size: 2.4rem;
+        }
+    }
+
     //ALIGNCONT - PROOF
     .proof {
         width: 100%;
+
+        p{
+            font-size: 2.4rem;
+        }
 
         //REVIEW SECTION
         .review {
@@ -1450,7 +1465,7 @@
                 position: absolute;
                 bottom: 0;
                 width: 100%;
-                height: 40%;
+                height: 50%;
                 background: rgba(0, 0, 0, 0.5);
                 padding: 2rem 0 0 2rem;
                 transition: .5s;
@@ -1701,7 +1716,7 @@
         background: #ff416c;
 
         h1 {
-            font-size: 2.4rem;
+            font-size: 3rem;
             font-family: $gB;
             color: #fff;
 
@@ -1723,11 +1738,12 @@
                 align-items: center;
 
                 strong {
-                    font-size: 2rem;
+                    font-size: 2.4rem;
                     font-family: $gM;
                 }
 
                 span {
+                    font-size: 2rem;
                     font-family: $gM;
                 }
             }
@@ -1791,12 +1807,12 @@
                     }
 
                     h2 {
-                        font-size: 1.8rem;
+                        font-size: 2.4rem;
                         font-family: $gB;
                     }
 
                     p {
-                        font-size: 1.4rem;
+                        font-size: 1.6rem;
                         white-space: pre-line;
                         padding-bottom: 1rem;
                         font-family: $gM;
@@ -1820,12 +1836,13 @@
                 }
 
                 h2 {
-                    font-size: 1.8rem;
+                    font-size: 2.4rem;
                     font-family: $gB;
                 }
 
                 p {
                     font-family: $gM;
+                    font-size: 2rem;
                     white-space: pre-line;
                     line-height: 1.5;
                     padding-bottom: 1rem;
@@ -1860,7 +1877,17 @@
 
     //ALIGNCONT - PROOF
 
+    .profess{
+        p{
+            font-size: 2.4rem;
+        }
+    }
+
     .SSID {
+        p{
+            font-size: 2.4rem;
+        }
+
         p:nth-of-type(2) {
             padding-bottom: 2rem;
         }
@@ -1877,7 +1904,7 @@
 
     .vdoWord {
         h1 {
-            font-size: 2.4rem;
+            font-size: 3.6rem;
             font-family: $gB;
             padding-bottom: 2rem;
         }
@@ -1903,7 +1930,7 @@
 
         ul {
             width: 100%;
-            height: 210px;
+            height: 300px;
             display: flex;
             justify-content: space-between;
 
@@ -1942,7 +1969,7 @@
 
                 p {
                     width: 100%;
-                    height: 35%;
+                    height: 40%;
                     background: rgba(0, 0, 0, 0.5);
                     position: absolute;
                     bottom: 0;
@@ -1952,6 +1979,7 @@
                     padding-left: 2rem;
                     color: #fff;
                     transition: .5s;
+                    font-size: 2.4rem;
                 }
 
                 &:hover {
@@ -1967,8 +1995,23 @@
         }
     }
 
+    .readColumn{
+        p{
+            font-size: 2.4rem;
+        }
+    }
+
     .emphasis {
         font-family: $gM;
+        p{
+            font-size: 2.4rem;
+        }
+    }
+
+    .reason{
+        p{
+            font-size: 2.4rem;
+        }
     }
 
     .profile-detail .content-box .highlight {
@@ -1976,8 +2019,6 @@
 
         p {
             font-size: 2.4rem;
-
-
         }
     }
 
@@ -1985,21 +2026,34 @@
         .ps14 {
             font-size: 1.4rem;
         }
+
+        p{
+            font-size: 2.4rem;
+        }
     }
 
     .profile-detail .content-box .price {
-        h1 {
-            font-size: 2rem;
-            font-family: $gB;
-            padding-bottom: .5rem;
+        .pbHalf{
+            display: inline-block;
         }
 
-        .blog strong {
+        p{
+            font-size: 2.4rem;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            font-family: $gB;
+            padding-bottom: .5rem;
+            white-space: pre-line;
+        }
+
+        &.blog p strong {
             font-family: $gM;
             color: #374fc9;
         }
 
-        .youtube strong {
+        &.youtube p strong {
             font-family: $gM;
             color: #ff416c;
         }
@@ -2014,6 +2068,7 @@
 
                 .date {
                     background: url('../img/youtube_weekday.png') no-repeat center;
+                    background-size: 60%;
                     background-color: #ff416c;
                 }
 
@@ -2032,6 +2087,7 @@
 
                 .date {
                     background: url('../img/youtube_weekend.png') no-repeat center;
+                    background-size: 60%;
                     background-color: #ff416c;
                 }
 
@@ -2046,18 +2102,19 @@
         }
 
         .weekday {
-            width: 560px;
-            height: 80px;
+            width: 90%;
+            height: 100px;
             background: #fafbff;
             box-shadow: 0 0 0 1px #374fc9;
             display: flex;
             margin-bottom: 1rem;
 
             .date {
-                width: 80px;
+                width: 100px;
                 height: 100%;
                 display: inline-block;
                 background: url('../img/blog_weekday.png') no-repeat center;
+                background-size: 60%;
                 background-color: #374fc9;
             }
 
@@ -2066,12 +2123,13 @@
                 align-items: center;
 
                 p {
+                    font-size: 2.4rem;
                     padding-left: 2rem;
                     line-height: 1.5;
 
                     &>strong {
                         font-family: $gB;
-                        font-size: 2rem;
+                        font-size: 2.8rem;
                     }
 
                     span {
@@ -2087,17 +2145,18 @@
         }
 
         .weekend {
-            width: 560px;
-            height: 80px;
+            width: 90%;
+            height: 100px;
             background: #fafbff;
             box-shadow: 0 0 0 1px #374fc9;
             display: flex;
 
             .date {
-                width: 80px;
+                width: 100px;
                 height: 100%;
                 display: inline-block;
                 background: url('../img/blog_weekend.png') no-repeat center;
+                background-size: 60%;
                 background-color: #374fc9;
             }
 
@@ -2106,12 +2165,13 @@
                 align-items: center;
 
                 p {
+                    font-size: 2.4rem;
                     padding-left: 2rem;
                     line-height: 1.5;
 
                     &>strong {
                         font-family: $gB;
-                        font-size: 2rem;
+                        font-size: 2.8rem;
                     }
 
                     span {
@@ -2133,6 +2193,10 @@
         &>div {
             padding-bottom: 1rem;
 
+            p{
+                font-size: 2.4rem;
+            }
+
             .title {
                 padding: 2rem 0 2rem 2rem;
                 background: #374fc9;
@@ -2143,12 +2207,12 @@
                 }
 
                 strong {
-                    font-size: 2rem;
+                    font-size: 2.4rem;
                     font-family: $gB;
                 }
 
                 span {
-                    font-size: 1.6rem;
+                    font-size: 2rem;
                     font-family: $gM;
                 }
             }
@@ -2200,16 +2264,18 @@
                     }
 
                     &.end {
-                        white-space: pre-line;
+                        // white-space: pre-line;
 
                         span {
+                            display: block;
                             &:nth-of-type(1) {
                                 color: #374fc9;
+                                white-space: pre-line;
                             }
 
                             &:nth-of-type(2),
                             &:nth-of-type(3) {
-                                font-size: 1.4rem;
+                                font-size: 1.8rem;
                             }
                         }
                     }
@@ -2269,13 +2335,13 @@
         }
 
         .p-box {
-            width: 80%;
+            width: 90%;
             margin: 0 auto;
             background: #eaf0f5;
             border-radius: 1rem;
 
             .p-b-alignBox {
-                width: 80%;
+                width: 90%;
                 margin: 0 auto;
                 display: flex;
                 flex-direction: column;
@@ -2283,12 +2349,13 @@
             }
 
             p {
+                font-size: 12px;
                 white-space: pre-line;
                 font-family: $gM;
 
                 .fs20 {
                     display: inline-block;
-                    font-size: 1.8rem;
+                    font-size: 2.4rem;
                     position: relative;
 
                     &:before {
@@ -2351,7 +2418,7 @@
     }
 }
 
-@media (min-width: 768px) {
+body.pc{
     //header
     header {
         background: rgba(0, 0, 0, 0.2);
