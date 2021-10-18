@@ -19,47 +19,51 @@
   font-style: normal;
 }
 
-@media screen and (min-width: 200px) {
-  * {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  html, body, ul, li, div, p, h1, h2, h3 {
-    margin: 0;
-    padding: 0;
-    font-weight: lighter;
-  }
-  html {
-    scroll-behavior: smooth;
-  }
-  html, body {
-    font: 10px "GmarketSansLight";
-    width: 100%;
-    height: 100%;
-  }
-  main {
-    overflow: hidden;
-    background: #eee;
-  }
-  li {
-    list-style: none;
-  }
-  a {
-    text-decoration: none;
-  }
-  .w1280 {
-    width: 1280px;
-    margin: 0 auto;
-  }
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-@media screen and (max-width: 1280px) {
-  .w1280 {
-    width: 100vw;
-  }
-  header .logo {
-    -webkit-transform: scale(0.7);
-            transform: scale(0.7);
-  }
+html,
+body,
+ul,
+li,
+div,
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: lighter;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  font: 10px "GmarketSansLight";
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  overflow: hidden;
+  background: #eee;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.w1280 {
+  width: 1280px;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=common.css.map */
