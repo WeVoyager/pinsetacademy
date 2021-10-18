@@ -30,6 +30,7 @@ window.addEventListener("DOMContentLoaded", function () {
   setScreenSize();
 
   window.addEventListener('resize', () => setScreenSize());
+  window.addEventListener('touchend', () => setScreenSize());
 
   //APPEND YOUTUBE SCHEDULE ===============================================
   var blogSc = $('.academySchedule').children().clone();
@@ -75,7 +76,28 @@ window.addEventListener("DOMContentLoaded", function () {
   //MODAL FUNCTION ----------------------------------------------------------------------
   //MODAL FUNCTION ----------------------------------------------------------------------
   var blogContent = $('.blogContent');
-  var youtubeContent = $('.youtubeContent')
+  var youtubeContent = $('.youtubeContent');
+
+  //REVIEW IMG ARRAY ==========================================
+  var reviewImg = ['../img/review01.jpg', '../img/review02.jpg', '../img/review03.jpg', '../img/review04.jpg', '../img/review05.jpg'],
+    reviewLeft = '',
+    reviewTop = '',
+    reviewZidx = [],
+    rotationImg = '',
+    reviewFunc = '',
+    reviewIdx = 0;
+
+  $('.blogContent .review div').each(function (idx, el) {
+    $(el).css('background', 'url(' + reviewImg[idx] + ') no-repeat center');
+    reviewLeft += $(el).css('left')+' ';
+    reviewTop += $(el).css('top')+' ';
+    reviewZidx += $(el).css('z-index')+' ';
+    rotationImg += $(el).css('background-image').match(/img\/[\w\d]+\.\jpg/g);
+  })
+
+  reviewLeft = reviewLeft.split(" ");
+  reviewTop = reviewTop.split(" ");
+  reviewZidx = reviewZidx.split(" ");
 
   $('.alignCont').empty();
 
@@ -105,6 +127,30 @@ window.addEventListener("DOMContentLoaded", function () {
     'transition': '.5s'
   })
 
+  //INNER MODAL OPEN============================================
+  function innerModal (){
+    $('.listCont .customer').each(function(idx,el){
+      $(el).on('click',function(){
+        $('.kakaoTalk').addClass('openClose');
+        var imgUrl = $(this).find('.imgCont').css('background-image').match(/img\/[\w\d]+\.\jpg/g),
+            title = $(this).find('p').text();
+        $('.kakaoImg').css({
+          'background':'url("../'+imgUrl+'") top no-repeat',
+          'background-size':'cover'
+        })
+        $('.kakaoModal').find('h2').text(title);
+      })
+    })
+
+    $('.close').on('click',function(){
+      $('.kakaoTalk').removeClass('openClose');
+    })
+
+    $('.kakaoTalk').on('click',function(){
+      $('.kakaoTalk').removeClass('openClose');
+    })
+  }
+
 
   //BLOG PROFILE FUNCTION =====================================
   function openBlog() {
@@ -115,31 +161,62 @@ window.addEventListener("DOMContentLoaded", function () {
     $('.content-box .p-title h1').text('핀셋 블로그 대표강사');
     $('.content-box .p-title p').text('머니테이커');
 
-    if(isMobile){
+    //REVIEW CHANGE EFFECT=================================================
+    reviewFunc = setInterval(function () {
+      $('.blogContent .review div:nth-of-type(1)').css({
+        'top': '30px',
+        'opacity': '0'
+      });
+      setTimeout(function(){
+        $('.blogContent .review div:nth-of-type(1)').css({
+          'top': reviewTop[3],
+          'left': reviewLeft[3],
+          'z-index': reviewZidx[3]
+        });
+        $cut = $('.blogContent .review div:nth-of-type(1)').detach();
+        $('.blogContent .review div:nth-of-type(1), .blogContent .review div:nth-of-type(2), .blogContent .review div:nth-of-type(3)').each(function (idx, el) {
+          $(el).css({
+            'top': reviewTop[idx],
+            'left': reviewLeft[idx],
+            'z-index': reviewZidx[idx],
+            'opacity': '1'
+          })
+        })
+        $('.blogContent .review').append($cut);
+      },250);
+    }, 3000);
+
+    if (isMobile()) {
       $('.cont-wrapper').slick({
         slidesToShow: 2,
-        slidesToScroll: 1,
+        slidesToScroll: 2,
         dots: true,
-        arrows: false
+        arrows: false,
+        swipeToSlide: true,
+        touchMove: true
       });
-  
+
       $('.satis .listCont').slick({
         slidesToShow: 4,
         slidesToScroll: 5,
         infinite: false,
-        arrows: false
+        arrows: false,
+        swipeToSlide: true,
+        touchMove: true
       });
-    }else{
+    } else {
       $('.cont-wrapper').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
-        dots: true
+        dots: true,
+        arrows: true
       });
-  
+
       $('.satis .listCont').slick({
         slidesToShow: 5,
         slidesToScroll: 5,
-        infinite: false
+        infinite: false,
+        arrows: true
       });
     }
   }
@@ -147,16 +224,18 @@ window.addEventListener("DOMContentLoaded", function () {
   function closeBlog() {
     $('.cont-wrapper').slick('unslick');
     $('.satis .listCont').slick('unslick');
+    clearInterval(reviewFunc);
   }
   //BLOG PROFILE FUNCTION =====================================
 
   //MODAL OPEN CLICK================================================
   function profileModal() {
-    $('.mt-profile, .rs-profile').on('click', function () {
+    $('.mt-profile, .rs-profile').off().on('click', function () {
       $('.profile-detail').addClass('open-modal');
       $('html').css('overflow', 'hidden');
       if ($(this).hasClass('mt-profile')) {
         openBlog();
+        innerModal();
       } else if ($(this).hasClass('rs-profile')) {
         $('.alignCont').append(youtubeContent);
         $('.profile-detail').css('background', '#ff416c');
@@ -175,7 +254,7 @@ window.addEventListener("DOMContentLoaded", function () {
     })
 
     //MODAL CLOSE CLICK================================================
-    $('.profile-detail .closeBtn').on('click', function () {
+    $('.profile-detail .closeBtn').off().on('click', function () {
       fadeOutContent();
       setTimeout(function () {
         closeBlog();

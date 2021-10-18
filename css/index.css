@@ -143,6 +143,19 @@ body.mobile header .h-cont .question span {
   padding: 1rem 2rem;
 }
 
+body.mobile footer {
+  width: 100%;
+}
+
+body.mobile footer .kakao {
+  width: 100%;
+  line-height: 0;
+}
+
+body.mobile footer .kakao img {
+  width: 100%;
+}
+
 body.mobile #sec1 {
   width: 100%;
   height: calc(var(--vh, 1vh) * 100);
@@ -245,7 +258,7 @@ body.mobile #sec1 .left-mt .rr-txt,
 body.mobile #sec1 .right-rs .lm-txt,
 body.mobile #sec1 .right-rs .rr-txt {
   width: 100%;
-  height: 150px;
+  height: 250px;
   position: absolute;
   bottom: 0;
   color: #fff;
@@ -276,7 +289,7 @@ body.mobile #sec1 .left-mt .lm-txt .t-box .profile,
 body.mobile #sec1 .left-mt .rr-txt .t-box .profile,
 body.mobile #sec1 .right-rs .lm-txt .t-box .profile,
 body.mobile #sec1 .right-rs .rr-txt .t-box .profile {
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 
 body.mobile #sec1 .left-mt .lm-txt .t-box .profile strong,
@@ -291,7 +304,7 @@ body.mobile #sec1 .left-mt .lm-txt .t-box .text,
 body.mobile #sec1 .left-mt .rr-txt .t-box .text,
 body.mobile #sec1 .right-rs .lm-txt .t-box .text,
 body.mobile #sec1 .right-rs .rr-txt .t-box .text {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   font-family: "GmarketSansMedium";
   margin-bottom: 3rem;
 }
@@ -1166,6 +1179,10 @@ body.mobile .academySchedule .weekday.youtube .week5 li:nth-of-type(5) p {
   opacity: .5;
 }
 
+body.mobile .academySchedule .weekday.youtube .week1 li:nth-of-type(1) {
+  opacity: .5;
+}
+
 body.mobile .academySchedule .weekend .week5 li .day {
   opacity: .5;
 }
@@ -1313,6 +1330,58 @@ body.mobile .benefits .benefit-img {
       -ms-flex-align: center;
           align-items: center;
   padding: 5rem 0 10rem 0;
+}
+
+body.mobile .benefits .benefit-img img {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+body.mobile #sec5 {
+  width: 100%;
+  background: url("../img/applyBg.jpg") center no-repeat;
+  background-size: cover;
+}
+
+body.mobile #sec5 .s5-cont {
+  text-align: center;
+  padding: 5rem 0;
+}
+
+body.mobile #sec5 .s5-cont h2 {
+  font-size: 2rem;
+  font-family: "GmarketSansBold";
+  padding-bottom: 3rem;
+  color: #fff;
+}
+
+body.mobile #sec5 .s5-cont p:nth-of-type(1) {
+  white-space: pre-line;
+  font-size: .6rem;
+  font-family: "GmarketSansMedium";
+  line-height: 2;
+  color: #fff;
+}
+
+body.mobile #sec5 .s5-cont p:nth-of-type(2) {
+  margin: 4rem 0;
+}
+
+body.mobile #sec5 .s5-cont p:nth-of-type(2) a {
+  display: inline-block;
+  font-family: "GmarketSansBold";
+  font-size: 2.8rem;
+  color: #fff;
+  padding: 2rem 6rem;
+  border: solid 2px #fff;
+  border-radius: 5rem;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+body.mobile #sec5 .s5-cont p:nth-of-type(2) a:hover {
+  background: #fff;
+  color: #000;
 }
 
 body.mobile .profile-detail {
@@ -1469,7 +1538,7 @@ body.mobile .profile-detail .content-box .p-title:after {
 
 body.mobile .profile-detail .content-box .view-cont {
   width: 100%;
-  height: calc(var(--vh, 1vh) * 80);
+  height: calc(var(--vh, 1vh) * 90);
   position: relative;
 }
 
@@ -1540,12 +1609,15 @@ body.mobile .proof .review {
 }
 
 body.mobile .proof .review div {
-  background: #000;
   position: absolute;
   width: 100%;
   height: 100%;
   left: -10px;
   top: 10px;
+  -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 body.mobile .proof .review div:nth-of-type(1) {
@@ -1571,7 +1643,83 @@ body.mobile .proof .review div:nth-of-type(4) {
   background: #ddd;
   z-index: 103;
   left: 20px;
-  top: -20px;
+  top: -30px;
+  opacity: 0;
+}
+
+body.mobile .proof .kakaoTalk {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  cursor: pointer;
+}
+
+body.mobile .proof .kakaoTalk.openClose {
+  visibility: visible;
+  opacity: 1;
+}
+
+body.mobile .proof .kakaoTalk .kakaoModal {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  background: #fff;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 2rem;
+}
+
+body.mobile .proof .kakaoTalk .kakaoModal .close {
+  display: inline-block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 3%;
+  top: 2%;
+  cursor: pointer;
+}
+
+body.mobile .proof .kakaoTalk .kakaoModal .close span {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  top: 50%;
+}
+
+body.mobile .proof .kakaoTalk .kakaoModal .close span:nth-of-type(1) {
+  -webkit-transform: rotate(45deg) translateY(-50%);
+          transform: rotate(45deg) translateY(-50%);
+}
+
+body.mobile .proof .kakaoTalk .kakaoModal .close span:nth-of-type(2) {
+  -webkit-transform: rotate(-45deg) translateY(-50%);
+          transform: rotate(-45deg) translateY(-50%);
+}
+
+body.mobile .proof .kakaoTalk .kakaoModal .kakaoImg {
+  width: 80%;
+  height: 90%;
+  margin: 0 auto;
+  background: #f0f0f0;
+}
+
+body.mobile .proof .kakaoTalk .kakaoModal h2 {
+  font-size: 2.8rem;
+  font-family: "GmarketSansBold";
+  text-align: center;
+  padding: 2rem 0 2rem 0;
 }
 
 body.mobile .proof .successStory,
@@ -1728,7 +1876,7 @@ body.mobile .proof .proofCont .textCont strong:after {
 body.mobile .proof .proofCont .textCont span {
   display: inline-block;
   padding-top: .5rem;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
 }
 
 body.mobile .proof .anotherReview {
@@ -2584,7 +2732,7 @@ body.mobile .perks .p-box .p-b-alignBox {
 }
 
 body.mobile .perks .p-box p {
-  font-size: 12px;
+  font-size: 10px;
   white-space: pre-line;
   font-family: "GmarketSansMedium";
 }
@@ -2658,6 +2806,19 @@ body.mobile .perks .applyBtn .apply span {
   font-family: "GmarketSansBold";
 }
 
+body.pc footer {
+  width: 100%;
+}
+
+body.pc footer .kakao {
+  width: 100%;
+  line-height: 0;
+}
+
+body.pc footer .kakao img {
+  width: 100%;
+}
+
 body.pc header {
   background: rgba(0, 0, 0, 0.2);
   height: 80px;
@@ -2700,6 +2861,7 @@ body.pc header .h-cont .nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  font-family: "GmarketSansMedium";
 }
 
 body.pc header .h-cont .nav a {
@@ -2717,14 +2879,17 @@ body.pc header .h-cont .question {
   -webkit-transition: .5s;
   transition: .5s;
   display: inline-block;
-  border: solid 1px #fff;
+  border: solid 2px #fff;
 }
 
 body.pc header .h-cont .question:hover {
+  background: #fff;
+  color: #000;
   opacity: 1;
 }
 
 body.pc header .h-cont .question span {
+  font-family: "GmarketSansMedium";
   display: inline-block;
   padding: 1rem 2rem;
 }
@@ -3699,6 +3864,10 @@ body.pc .academySchedule .weekday.youtube .week5 li:nth-of-type(5) p {
   opacity: .5;
 }
 
+body.pc .academySchedule .weekday.youtube .week1 li:nth-of-type(1) {
+  opacity: .5;
+}
+
 body.pc .academySchedule .weekend .week5 li .day {
   opacity: .5;
 }
@@ -3844,6 +4013,53 @@ body.pc .benefits .benefit-img {
       -ms-flex-align: center;
           align-items: center;
   padding: 5rem 0 10rem 0;
+}
+
+body.pc #sec5 {
+  width: 100%;
+  background: url("../img/applyBg.jpg") center no-repeat;
+  background-size: cover;
+}
+
+body.pc #sec5 .s5-cont {
+  text-align: center;
+  padding: 10rem 0;
+}
+
+body.pc #sec5 .s5-cont h2 {
+  font-size: 3.6rem;
+  font-family: "GmarketSansBold";
+  padding-bottom: 5rem;
+  color: #fff;
+}
+
+body.pc #sec5 .s5-cont p:nth-of-type(1) {
+  white-space: pre-line;
+  font-size: 2.4rem;
+  font-family: "GmarketSansMedium";
+  line-height: 3;
+  color: #fff;
+}
+
+body.pc #sec5 .s5-cont p:nth-of-type(2) {
+  margin: 5rem 0;
+}
+
+body.pc #sec5 .s5-cont p:nth-of-type(2) a {
+  display: inline-block;
+  font-family: "GmarketSansBold";
+  font-size: 2.8rem;
+  color: #fff;
+  padding: 2rem 6rem;
+  border: solid 2px #fff;
+  border-radius: 5rem;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+body.pc #sec5 .s5-cont p:nth-of-type(2) a:hover {
+  background: #fff;
+  color: #000;
 }
 
 body.pc .profile-detail {
@@ -4048,8 +4264,95 @@ body.pc .profile-detail .content-box .alignCont .t-align {
   text-align: center;
 }
 
+body.pc .greetings p {
+  white-space: pre-line;
+}
+
+body.pc .startReason p {
+  white-space: pre-line;
+}
+
 body.pc .proof {
   width: 100%;
+}
+
+body.pc .proof > p:nth-of-type(1) {
+  white-space: pre-line;
+}
+
+body.pc .proof .kakaoTalk {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  cursor: pointer;
+}
+
+body.pc .proof .kakaoTalk.openClose {
+  visibility: visible;
+  opacity: 1;
+}
+
+body.pc .proof .kakaoTalk .kakaoModal {
+  position: relative;
+  width: 40%;
+  height: 80%;
+  background: #fff;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 2rem;
+}
+
+body.pc .proof .kakaoTalk .kakaoModal .close {
+  display: inline-block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 3%;
+  top: 2%;
+  cursor: pointer;
+}
+
+body.pc .proof .kakaoTalk .kakaoModal .close span {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  top: 50%;
+}
+
+body.pc .proof .kakaoTalk .kakaoModal .close span:nth-of-type(1) {
+  -webkit-transform: rotate(45deg) translateY(-50%);
+          transform: rotate(45deg) translateY(-50%);
+}
+
+body.pc .proof .kakaoTalk .kakaoModal .close span:nth-of-type(2) {
+  -webkit-transform: rotate(-45deg) translateY(-50%);
+          transform: rotate(-45deg) translateY(-50%);
+}
+
+body.pc .proof .kakaoTalk .kakaoModal .kakaoImg {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  background: #f0f0f0;
+}
+
+body.pc .proof .kakaoTalk .kakaoModal h2 {
+  font-size: 2.8rem;
+  font-family: "GmarketSansBold";
+  text-align: center;
+  padding: 2rem 0 2rem 0;
 }
 
 body.pc .proof .review {
@@ -4060,12 +4363,15 @@ body.pc .proof .review {
 }
 
 body.pc .proof .review div {
-  background: #000;
   position: absolute;
   width: 100%;
   height: 100%;
   left: -10px;
   top: 10px;
+  -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 body.pc .proof .review div:nth-of-type(1) {
@@ -4091,7 +4397,8 @@ body.pc .proof .review div:nth-of-type(4) {
   background: #ddd;
   z-index: 103;
   left: 20px;
-  top: -20px;
+  top: -30px;
+  opacity: 0;
 }
 
 body.pc .proof .successStory,
@@ -4643,7 +4950,12 @@ body.pc .consulting .cons .result .change .after {
   width: 48.5%;
 }
 
-body.pc .SSID p:nth-of-type(2) {
+body.pc .profess p {
+  white-space: pre-line;
+}
+
+body.pc .SSID p {
+  white-space: pre-line;
   padding-bottom: 2rem;
 }
 
@@ -4768,18 +5080,26 @@ body.pc .profile-detail .content-box .need .ps14 {
   font-size: 1.4rem;
 }
 
+body.pc .profile-detail .content-box .price .pbHalf {
+  display: inline-block;
+}
+
+body.pc .profile-detail .content-box .price p {
+  white-space: pre-line;
+}
+
 body.pc .profile-detail .content-box .price h1 {
   font-size: 2rem;
   font-family: "GmarketSansBold";
   padding-bottom: .5rem;
 }
 
-body.pc .profile-detail .content-box .price .blog strong {
+body.pc .profile-detail .content-box .price.blog strong {
   font-family: "GmarketSansMedium";
   color: #374fc9;
 }
 
-body.pc .profile-detail .content-box .price .youtube strong {
+body.pc .profile-detail .content-box .price.youtube strong {
   font-family: "GmarketSansMedium";
   color: #ff416c;
 }
