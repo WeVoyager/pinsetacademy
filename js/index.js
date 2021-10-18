@@ -10,6 +10,67 @@ window.addEventListener("DOMContentLoaded", function () {
     pC2Txt = $('#pinset-archademy .title p span').get(),
     pC2Split = pC2Txt[0].innerHTML.split("");
 
+  function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
+
+  if (isMobile()) {
+    $('body').addClass('mobile');
+  } else {
+    $('body').addClass('pc');
+  }
+
+  //MOBILE BROWSER=======================================================
+  function setScreenSize() {
+    let vh = window.innerHeight * 0.01;
+
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
+  setScreenSize();
+
+  window.addEventListener('resize', () => setScreenSize());
+
+  //APPEND YOUTUBE SCHEDULE ===============================================
+  var blogSc = $('.academySchedule').children().clone();
+
+  $(blogSc[0]).text('핀셋 유튜브 아카데미 일정표');
+  $(blogSc[0]).css('padding-top', '0');
+
+  $(blogSc[1]).children().each(function (idx, el) {
+    $(el).removeClass('blog');
+    $(el).addClass('youtube');
+  })
+
+  $('.academySchedule').append(blogSc);
+
+  $('.weekday.youtube h2').text('1기 핀셋 유튜브 평일반');
+  $('.weekend.youtube h2').text('1기 핀셋 유튜브 주말반');
+
+  const ytbWeekDay = ['일', '월', '화', '수', '목'],
+    ytbWeekEnd = ['금', '토', '일', '월', '화'],
+    ytbWeekDayDate = ['10/31', '11/1', '2', '3', '4', '7', '8', '9', '10', '11', '14', '15', '16', '17', '18', '21', '22', '23', '24', '25', '28', '29', '30', '12/1', '2'],
+    ytbWeekEndDate = ['11/5', '6', '7', '8', '9', '12', '13', '14', '15', '16', '19', '20', '21', '22', '23', '26', '27', '28', '29', '30', '12/3', '4', '5', '6', '7'];
+
+  $('.weekday.youtube .dayOfWeek li').each(function (idx, el) {
+    $(el).children().text(ytbWeekDay[idx]);
+  })
+
+  $('.weekend.youtube .dayOfWeek li').each(function (idx, el) {
+    $(el).children().text(ytbWeekEnd[idx]);
+  })
+
+  var week = $('.weekday.youtube .week1, .weekday.youtube .week2, .weekday.youtube .week3, .weekday.youtube .week4, .weekday.youtube .week5'),
+    week2 = $('.weekend.youtube .week1, .weekend.youtube .week2, .weekend.youtube .week3, .weekend.youtube .week4, .weekend.youtube .week5');
+
+  week.children().find('.day').each(function (idx, el) {
+    $(el).text(ytbWeekDayDate[idx]);
+  })
+
+  week2.children().find('.day').each(function (idx, el) {
+    $(el).text(ytbWeekEndDate[idx]);
+  })
+
 
   //MODAL FUNCTION ----------------------------------------------------------------------
   //MODAL FUNCTION ----------------------------------------------------------------------
@@ -46,28 +107,44 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
   //BLOG PROFILE FUNCTION =====================================
-  function openBlog(){
+  function openBlog() {
     $('.alignCont').append(blogContent);
 
-    $('.profile-detail').css('background','#374fc9');
+    $('.profile-detail').css('background', '#374fc9');
 
     $('.content-box .p-title h1').text('핀셋 블로그 대표강사');
-    $('.content-box .p-title p').text('머니테이커')
+    $('.content-box .p-title p').text('머니테이커');
 
-    $('.cont-wrapper').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      dots: true
-    });
+    if(isMobile){
+      $('.cont-wrapper').slick({
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: false
+      });
   
-    $('.satis .listCont').slick({
-      slidesToShow: 5,
-      slidesToScroll: 5,
-      infinite: false
-    });
+      $('.satis .listCont').slick({
+        slidesToShow: 4,
+        slidesToScroll: 5,
+        infinite: false,
+        arrows: false
+      });
+    }else{
+      $('.cont-wrapper').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: true
+      });
+  
+      $('.satis .listCont').slick({
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        infinite: false
+      });
+    }
   }
 
-  function closeBlog(){
+  function closeBlog() {
     $('.cont-wrapper').slick('unslick');
     $('.satis .listCont').slick('unslick');
   }
@@ -78,11 +155,11 @@ window.addEventListener("DOMContentLoaded", function () {
     $('.mt-profile, .rs-profile').on('click', function () {
       $('.profile-detail').addClass('open-modal');
       $('html').css('overflow', 'hidden');
-      if($(this).hasClass('mt-profile')){
+      if ($(this).hasClass('mt-profile')) {
         openBlog();
-      }else if($(this).hasClass('rs-profile')){
+      } else if ($(this).hasClass('rs-profile')) {
         $('.alignCont').append(youtubeContent);
-        $('.profile-detail').css('background','#ff416c');
+        $('.profile-detail').css('background', '#ff416c');
         $('.content-box .p-title h1').text('핀셋 유튜브 대표강사');
         $('.content-box .p-title p').text('러셀')
       }
@@ -115,8 +192,8 @@ window.addEventListener("DOMContentLoaded", function () {
     })
   }
 
-  $('.profile').on('mousemove',function(e){
-    if($(this).hasClass('txtOp')){
+  $('.profile').on('mousemove', function (e) {
+    if ($(this).hasClass('txtOp')) {
       profileModal();
     }
   })
