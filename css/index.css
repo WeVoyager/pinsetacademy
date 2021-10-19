@@ -1035,14 +1035,14 @@ body.mobile #sec3 .left-cont .text {
 }
 
 body.mobile #sec3 .left-cont .text h1 {
-  font-size: 2rem;
+  font-size: 4rem;
   font-family: "GmarketSansBold";
   line-height: 1.5;
 }
 
 body.mobile #sec3 .left-cont .text .s3-t1-c2,
 body.mobile #sec3 .left-cont .text .s3-t1-c3 {
-  font-size: 1rem;
+  font-size: 2.3rem;
   font-family: "GmarketSansMedium";
   line-height: 1.2;
 }
@@ -1052,7 +1052,7 @@ body.mobile #sec3 .left-cont .text .s3-t1-c3 {
 }
 
 body.mobile #sec3 .left-cont .text p {
-  font-size: 1rem;
+  font-size: 2.3rem;
   font-family: "GmarketSansMedium";
 }
 
@@ -1062,7 +1062,7 @@ body.mobile #sec3 .left-cont .text p strong {
 
 body.mobile #sec3 .left-cont .text .s3-t1-c8 {
   padding-top: 1rem;
-  font-size: 0.8rem;
+  font-size: 1.6rem;
   white-space: pre-line;
 }
 
@@ -1357,7 +1357,7 @@ body.mobile #sec5 .s5-cont h2 {
 
 body.mobile #sec5 .s5-cont p:nth-of-type(1) {
   white-space: pre-line;
-  font-size: .6rem;
+  font-size: 1.6rem;
   font-family: "GmarketSansMedium";
   line-height: 2;
   color: #fff;
@@ -4303,7 +4303,7 @@ body.pc .proof .kakaoTalk.openClose {
 body.pc .proof .kakaoTalk .kakaoModal {
   position: relative;
   width: 40%;
-  height: 80%;
+  height: 90%;
   background: #fff;
   top: 50%;
   left: 50%;

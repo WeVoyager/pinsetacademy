@@ -271,6 +271,31 @@ window.addEventListener("DOMContentLoaded", function () {
     })
   }
 
+  //NAVIGATION CLICK ===============================================>
+  $('.nav a:nth-of-type(1), .nav a:nth-of-type(2)').on('click',function(e){
+    e.preventDefault();
+      $('.profile-detail').addClass('open-modal');
+      $('html').css('overflow', 'hidden');
+      if ($(this).index() == 0) {
+        openBlog();
+        innerModal();
+      } else{
+        $('.alignCont').append(youtubeContent);
+        $('.profile-detail').css('background', '#ff416c');
+        $('.content-box .p-title h1').text('핀셋 유튜브 대표강사');
+        $('.content-box .p-title p').text('러셀')
+      }
+      setTimeout(function () {
+        $('.bg-skew').addClass('active');
+        setTimeout(function () {
+          fadeInContent();
+          setTimeout(function () {
+            $('.closeBtn').addClass('rotate');
+          }, 500)
+        }, 200)
+      }, 500);
+  })
+
   $('.profile').on('mousemove', function (e) {
     if ($(this).hasClass('txtOp')) {
       profileModal();

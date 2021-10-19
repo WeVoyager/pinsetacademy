@@ -848,14 +848,14 @@ body.mobile{
                 letter-spacing: -0.05em;
 
                 h1 {
-                    font-size: 2rem;
+                    font-size: 4rem;
                     font-family: $gB;
                     line-height: 1.5;
                 }
 
                 .s3-t1-c2,
                 .s3-t1-c3 {
-                    font-size: 1rem;
+                    font-size: 2.3rem;
                     font-family: $gM;
                     line-height: 1.2;
                 }
@@ -865,7 +865,7 @@ body.mobile{
                 }
 
                 p {
-                    font-size: 1rem;
+                    font-size: 2.3rem;
                     font-family: $gM;
 
                     strong {
@@ -875,7 +875,7 @@ body.mobile{
 
                 .s3-t1-c8 {
                     padding-top: 1rem;
-                    font-size: 0.8rem;
+                    font-size: 1.6rem;
                     white-space: pre-line;
                 }
             }
@@ -1122,7 +1122,7 @@ body.mobile{
             p{
                 &:nth-of-type(1){
                     white-space: pre-line;
-                    font-size: .6rem;
+                    font-size: 1.6rem;
                     font-family: $gM;
                     line-height: 2;
                     color: #fff;
@@ -3912,7 +3912,7 @@ body.pc{
 
             .kakaoModal{
                 position: relative;
-                width: 40%; height: 80%;
+                width: 40%; height: 90%;
                 background: #fff;
                 top: 50%; left: 50%;
                 transform: translate(-50%, -50%);
