@@ -1,7 +1,7 @@
 @import 'common.scss';
 
 
-body.mobile{
+body.mobile {
     .w1280 {
         width: 100%;
     }
@@ -67,14 +67,14 @@ body.mobile{
     }
 
     //footer ================================
-    footer{
+    footer {
         width: 100%;
 
-        .kakao{
+        .kakao {
             width: 100%;
             line-height: 0;
 
-            img{
+            img {
                 width: 100%;
             }
         }
@@ -533,7 +533,7 @@ body.mobile{
 
         .s2-help {
             margin: 12rem 0;
-            font-size: 14px;
+            font-size: 2.4rem;
 
             span {
                 font-family: $gM;
@@ -547,13 +547,67 @@ body.mobile{
                 font-size: 5.2rem;
 
                 &:nth-of-type(4) {
-                    font-size: 10px;
+                    font-size: 2rem;
                     margin: 3rem 0 0 0;
                     opacity: .5;
                 }
 
-                strong {
-                    font-family: $gB;
+                span{
+                    display: inline-block;
+                }
+
+                &.follow span {
+                    span{
+                        &:nth-of-type(1){
+                            padding-right: 1rem;
+                        }
+    
+                        &:nth-of-type(4){
+                            padding: 0 1rem;
+                        }
+                    }
+                }
+    
+                &.viewer span{
+                    span{
+                        &:nth-of-type(3){
+                            padding-right: 1rem;
+                        }
+    
+                        &:nth-last-child(1){
+                            padding-left: 1rem;
+                        }
+                    }
+                }
+    
+                &.stack span{
+                    span{
+                        &:nth-of-type(5){
+                            padding-right: 1rem;
+                        }
+    
+                        &:nth-last-child(1){
+                            padding-left: 1rem;
+                        }
+                    }
+                }
+    
+                .digit-con {
+                    display: inline-block;
+                    height: 6.5rem;
+                    overflow: hidden;
+                    vertical-align: top;
+                    font-family: $gM;
+                    // padding: 0 .5rem 0 .5rem;
+    
+                    strong{
+                        display: block;
+                        font-size: 5.2rem;
+                        line-height: 6.5rem;
+                        position: relative;
+                        text-align: center;
+                        top: 0;
+                    }
                 }
             }
         }
@@ -565,7 +619,7 @@ body.mobile{
             text-align: center;
 
             p {
-                font-size: 3rem;
+                font-size: 2.4rem;
                 padding-bottom: 15rem;
                 white-space: nowrap;
                 transition: opacity .5s, cubic-bezier(0.65, 0, 0.35, 1) .7s;
@@ -1004,8 +1058,8 @@ body.mobile{
         }
 
         .weekday.youtube .week1 {
-            li{
-                &:nth-of-type(1){
+            li {
+                &:nth-of-type(1) {
                     opacity: .5;
                 }
             }
@@ -1097,41 +1151,41 @@ body.mobile{
             align-items: center;
             padding: 5rem 0 10rem 0;
 
-            img{
+            img {
                 transform: scale(0.9);
             }
         }
     }
 
-    #sec5{
+    #sec5 {
         width: 100%;
         background: url('../img/applyBg.jpg') center no-repeat;
         background-size: cover;
 
-        .s5-cont{
+        .s5-cont {
             text-align: center;
             padding: 5rem 0;
 
-            h2{
-                font-size: 2rem;
+            h2 {
+                font-size: 2.8rem;
                 font-family: $gB;
                 padding-bottom: 3rem;
                 color: #fff;
             }
 
-            p{
-                &:nth-of-type(1){
+            p {
+                &:nth-of-type(1) {
                     white-space: pre-line;
-                    font-size: 1.6rem;
+                    font-size: 2rem;
                     font-family: $gM;
                     line-height: 2;
                     color: #fff;
                 }
 
-                &:nth-of-type(2){
+                &:nth-of-type(2) {
                     margin: 4rem 0;
 
-                    a{
+                    a {
                         display: inline-block;
                         font-family: $gB;
                         font-size: 2.8rem;
@@ -1141,7 +1195,7 @@ body.mobile{
                         border-radius: 5rem;
                         transition: .5s;
 
-                        &:hover{
+                        &:hover {
                             background: #fff;
                             color: #000;
                         }
@@ -1356,14 +1410,14 @@ body.mobile{
         }
     }
 
-    .greetings{
-        p{
+    .greetings {
+        p {
             font-size: 2.4rem;
         }
     }
 
-    .startReason{
-        p{
+    .startReason {
+        p {
             font-size: 2.4rem;
         }
     }
@@ -1372,7 +1426,7 @@ body.mobile{
     .proof {
         width: 100%;
 
-        p{
+        p {
             font-size: 2.4rem;
         }
 
@@ -1389,7 +1443,7 @@ body.mobile{
                 height: 100%;
                 left: -10px;
                 top: 10px;
-                box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.5);
+                box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
                 transition: .5s;
 
                 &:nth-of-type(1) {
@@ -1421,61 +1475,69 @@ body.mobile{
             }
         }
 
-        .kakaoTalk{
+        .kakaoTalk {
             position: fixed;
-            width: 100%; height: 100vh;
-            top: 0; left: 0;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
             z-index: 998;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             visibility: hidden;
             opacity: 0;
             transition: .5s;
             cursor: pointer;
 
-            &.openClose{
+            &.openClose {
                 visibility: visible;
                 opacity: 1;
             }
 
-            .kakaoModal{
+            .kakaoModal {
                 position: relative;
-                width: 80%; height: 80%;
+                width: 80%;
+                height: 80%;
                 background: #fff;
-                top: 50%; left: 50%;
+                top: 50%;
+                left: 50%;
                 transform: translate(-50%, -50%);
                 border-radius: 2rem;
 
-                .close{
+                .close {
                     display: inline-block;
                     position: absolute;
-                    width: 30px; height: 30px;
-                    right: 3%; top: 2%;
+                    width: 30px;
+                    height: 30px;
+                    right: 3%;
+                    top: 2%;
                     cursor: pointer;
 
-                    span{
+                    span {
                         display: inline-block;
                         position: absolute;
-                        width: 100%; height: 2px;
+                        width: 100%;
+                        height: 2px;
                         background: #000;
                         top: 50%;
 
-                        &:nth-of-type(1){
+                        &:nth-of-type(1) {
                             transform: rotate(45deg) translateY(-50%);
                         }
 
-                        &:nth-of-type(2){
+                        &:nth-of-type(2) {
                             transform: rotate(-45deg) translateY(-50%);
                         }
                     }
                 }
 
-                .kakaoImg{
-                    width: 80%; height: 90%;
+                .kakaoImg {
+                    width: 80%;
+                    height: 90%;
                     margin: 0 auto;
                     background: #f0f0f0;
                 }
 
-                h2{
+                h2 {
                     font-size: 2.8rem;
                     font-family: $gB;
                     text-align: center;
@@ -2015,14 +2077,14 @@ body.mobile{
 
     //ALIGNCONT - PROOF
 
-    .profess{
-        p{
+    .profess {
+        p {
             font-size: 2.4rem;
         }
     }
 
     .SSID {
-        p{
+        p {
             font-size: 2.4rem;
         }
 
@@ -2133,21 +2195,22 @@ body.mobile{
         }
     }
 
-    .readColumn{
-        p{
+    .readColumn {
+        p {
             font-size: 2.4rem;
         }
     }
 
     .emphasis {
         font-family: $gM;
-        p{
+
+        p {
             font-size: 2.4rem;
         }
     }
 
-    .reason{
-        p{
+    .reason {
+        p {
             font-size: 2.4rem;
         }
     }
@@ -2165,20 +2228,20 @@ body.mobile{
             font-size: 1.4rem;
         }
 
-        p{
+        p {
             font-size: 2.4rem;
         }
     }
 
     .profile-detail .content-box .price {
-        .pbHalf{
+        .pbHalf {
             display: inline-block;
         }
 
-        p{
+        p {
             font-size: 2.4rem;
         }
-        
+
         h1 {
             font-size: 2.8rem;
             font-family: $gB;
@@ -2331,7 +2394,7 @@ body.mobile{
         &>div {
             padding-bottom: 1rem;
 
-            p{
+            p {
                 font-size: 2.4rem;
             }
 
@@ -2406,6 +2469,7 @@ body.mobile{
 
                         span {
                             display: block;
+
                             &:nth-of-type(1) {
                                 color: #374fc9;
                                 white-space: pre-line;
@@ -2487,7 +2551,7 @@ body.mobile{
             }
 
             p {
-                font-size: 10px;
+                font-size: 2rem;
                 white-space: pre-line;
                 font-family: $gM;
 
@@ -2556,19 +2620,20 @@ body.mobile{
     }
 }
 
-body.pc{
-    footer{
+body.pc {
+    footer {
         width: 100%;
 
-        .kakao{
+        .kakao {
             width: 100%;
             line-height: 0;
 
-            img{
+            img {
                 width: 100%;
             }
         }
     }
+
     //header
     header {
         background: rgba(0, 0, 0, 0.2);
@@ -3097,8 +3162,62 @@ body.pc{
                     opacity: .5;
                 }
 
-                strong {
-                    font-family: $gB;
+                span {
+                    display: inline-block;
+                }
+
+                &.follow span {
+                    span{
+                        &:nth-of-type(1){
+                            padding-right: 1rem;
+                        }
+
+                        &:nth-of-type(4){
+                            padding: 0 1rem;
+                        }
+                    }
+                }
+
+                &.viewer span{
+                    span{
+                        &:nth-of-type(3){
+                            padding-right: 1rem;
+                        }
+
+                        &:nth-last-child(1){
+                            padding-left: 1rem;
+                        }
+                    }
+                }
+
+                &.stack span{
+                    span{
+                        &:nth-of-type(5){
+                            padding-right: 1rem;
+                        }
+
+                        &:nth-last-child(1){
+                            padding-left: 1rem;
+                        }
+                    }
+                }
+
+                .digit-con {
+                    display: inline-block;
+                    height: 6.5rem;
+                    overflow: hidden;
+                    vertical-align: top;
+                    font-family: $gM;
+                    // padding: 0 .5rem 0 .5rem;
+
+                    strong{
+                        display: block;
+                        font-size: 5.2rem;
+                        line-height: 6.5rem;
+                        position: relative;
+                        text-align: center;
+                        top: 0;
+                    }
                 }
             }
         }
@@ -3380,9 +3499,10 @@ body.pc{
             padding: 20rem 0 15rem 0;
             position: relative;
 
-            .book-obj{
+            .book-obj {
                 position: absolute;
-                top: 6%; right: 0;
+                top: 6%;
+                right: 0;
                 opacity: .3;
             }
 
@@ -3524,8 +3644,8 @@ body.pc{
         }
 
         .weekday.youtube .week1 {
-            li{
-                &:nth-of-type(1){
+            li {
+                &:nth-of-type(1) {
                     opacity: .5;
                 }
             }
@@ -3618,24 +3738,24 @@ body.pc{
     }
 
     //SECTION5 ====================================================
-    #sec5{
+    #sec5 {
         width: 100%;
         background: url('../img/applyBg.jpg') center no-repeat;
         background-size: cover;
 
-        .s5-cont{
+        .s5-cont {
             text-align: center;
             padding: 10rem 0;
 
-            h2{
+            h2 {
                 font-size: 3.6rem;
                 font-family: $gB;
                 padding-bottom: 5rem;
                 color: #fff;
             }
 
-            p{
-                &:nth-of-type(1){
+            p {
+                &:nth-of-type(1) {
                     white-space: pre-line;
                     font-size: 2.4rem;
                     font-family: $gM;
@@ -3643,10 +3763,10 @@ body.pc{
                     color: #fff;
                 }
 
-                &:nth-of-type(2){
+                &:nth-of-type(2) {
                     margin: 5rem 0;
 
-                    a{
+                    a {
                         display: inline-block;
                         font-family: $gB;
                         font-size: 2.8rem;
@@ -3656,7 +3776,7 @@ body.pc{
                         border-radius: 5rem;
                         transition: .5s;
 
-                        &:hover{
+                        &:hover {
                             background: #fff;
                             color: #000;
                         }
@@ -3872,14 +3992,14 @@ body.pc{
         }
     }
 
-    .greetings{
-        p{
+    .greetings {
+        p {
             white-space: pre-line;
         }
     }
 
-    .startReason{
-        p{
+    .startReason {
+        p {
             white-space: pre-line;
         }
     }
@@ -3888,67 +4008,75 @@ body.pc{
     .proof {
         width: 100%;
 
-        &>p{
-            &:nth-of-type(1){
+        &>p {
+            &:nth-of-type(1) {
                 white-space: pre-line;
             }
         }
 
-        .kakaoTalk{
+        .kakaoTalk {
             position: fixed;
-            width: 100%; height: 100vh;
-            top: 0; left: 0;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
             z-index: 998;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             visibility: hidden;
             opacity: 0;
             transition: .5s;
             cursor: pointer;
 
-            &.openClose{
+            &.openClose {
                 visibility: visible;
                 opacity: 1;
             }
 
-            .kakaoModal{
+            .kakaoModal {
                 position: relative;
-                width: 40%; height: 90%;
+                width: 40%;
+                height: 90%;
                 background: #fff;
-                top: 50%; left: 50%;
+                top: 50%;
+                left: 50%;
                 transform: translate(-50%, -50%);
                 border-radius: 2rem;
 
-                .close{
+                .close {
                     display: inline-block;
                     position: absolute;
-                    width: 30px; height: 30px;
-                    right: 3%; top: 2%;
+                    width: 30px;
+                    height: 30px;
+                    right: 3%;
+                    top: 2%;
                     cursor: pointer;
 
-                    span{
+                    span {
                         display: inline-block;
                         position: absolute;
-                        width: 100%; height: 2px;
+                        width: 100%;
+                        height: 2px;
                         background: #000;
                         top: 50%;
 
-                        &:nth-of-type(1){
+                        &:nth-of-type(1) {
                             transform: rotate(45deg) translateY(-50%);
                         }
 
-                        &:nth-of-type(2){
+                        &:nth-of-type(2) {
                             transform: rotate(-45deg) translateY(-50%);
                         }
                     }
                 }
 
-                .kakaoImg{
-                    width: 80%; height: 80%;
+                .kakaoImg {
+                    width: 80%;
+                    height: 80%;
                     margin: 0 auto;
                     background: #f0f0f0;
                 }
 
-                h2{
+                h2 {
                     font-size: 2.8rem;
                     font-family: $gB;
                     text-align: center;
@@ -3970,7 +4098,7 @@ body.pc{
                 height: 100%;
                 left: -10px;
                 top: 10px;
-                box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.5);
+                box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
                 transition: .5s;
 
                 &:nth-of-type(1) {
@@ -4529,8 +4657,8 @@ body.pc{
         }
     }
 
-    .profess{
-        p{
+    .profess {
+        p {
             white-space: pre-line;
         }
     }
@@ -4538,7 +4666,7 @@ body.pc{
     //ALIGNCONT - PROOF
 
     .SSID {
-        p{
+        p {
             white-space: pre-line;
             padding-bottom: 2rem;
         }
@@ -4666,11 +4794,11 @@ body.pc{
     }
 
     .profile-detail .content-box .price {
-        .pbHalf{
+        .pbHalf {
             display: inline-block;
         }
 
-        p{
+        p {
             white-space: pre-line;
         }
 

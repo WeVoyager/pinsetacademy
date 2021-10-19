@@ -40,6 +40,15 @@ h3 {
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: none;
+  /*Chrome, Safari, newer versions of Opera*/
+  -moz-text-size-adjust: none;
+  /*Firefox*/
+  -ms-text-size-adjust: none;
+  /*Ie*/
+  -o-text-size-adjust: none;
+  /*old versions of Opera*/
+  -webkit-tap-highlight-color: transparent;
 }
 
 html,
@@ -713,7 +722,7 @@ body.mobile .sec-cont .title-text p:nth-of-type(3) span {
 
 body.mobile .sec-cont .s2-help {
   margin: 12rem 0;
-  font-size: 14px;
+  font-size: 2.4rem;
 }
 
 body.mobile .sec-cont .s2-help span {
@@ -729,13 +738,54 @@ body.mobile .sec-cont .youtube-spec p {
 }
 
 body.mobile .sec-cont .youtube-spec p:nth-of-type(4) {
-  font-size: 10px;
+  font-size: 2rem;
   margin: 3rem 0 0 0;
   opacity: .5;
 }
 
-body.mobile .sec-cont .youtube-spec p strong {
-  font-family: "GmarketSansBold";
+body.mobile .sec-cont .youtube-spec p span {
+  display: inline-block;
+}
+
+body.mobile .sec-cont .youtube-spec p.follow span span:nth-of-type(1) {
+  padding-right: 1rem;
+}
+
+body.mobile .sec-cont .youtube-spec p.follow span span:nth-of-type(4) {
+  padding: 0 1rem;
+}
+
+body.mobile .sec-cont .youtube-spec p.viewer span span:nth-of-type(3) {
+  padding-right: 1rem;
+}
+
+body.mobile .sec-cont .youtube-spec p.viewer span span:nth-last-child(1) {
+  padding-left: 1rem;
+}
+
+body.mobile .sec-cont .youtube-spec p.stack span span:nth-of-type(5) {
+  padding-right: 1rem;
+}
+
+body.mobile .sec-cont .youtube-spec p.stack span span:nth-last-child(1) {
+  padding-left: 1rem;
+}
+
+body.mobile .sec-cont .youtube-spec p .digit-con {
+  display: inline-block;
+  height: 6.5rem;
+  overflow: hidden;
+  vertical-align: top;
+  font-family: "GmarketSansMedium";
+}
+
+body.mobile .sec-cont .youtube-spec p .digit-con strong {
+  display: block;
+  font-size: 5.2rem;
+  line-height: 6.5rem;
+  position: relative;
+  text-align: center;
+  top: 0;
 }
 
 body.mobile #sec2 .s2-gl {
@@ -743,7 +793,7 @@ body.mobile #sec2 .s2-gl {
 }
 
 body.mobile #sec2 .s2-gl p {
-  font-size: 3rem;
+  font-size: 2.4rem;
   padding-bottom: 15rem;
   white-space: nowrap;
   -webkit-transition: opacity 0.5s, cubic-bezier(0.65, 0, 0.35, 1) 0.7s;
@@ -1349,7 +1399,7 @@ body.mobile #sec5 .s5-cont {
 }
 
 body.mobile #sec5 .s5-cont h2 {
-  font-size: 2rem;
+  font-size: 2.8rem;
   font-family: "GmarketSansBold";
   padding-bottom: 3rem;
   color: #fff;
@@ -1357,7 +1407,7 @@ body.mobile #sec5 .s5-cont h2 {
 
 body.mobile #sec5 .s5-cont p:nth-of-type(1) {
   white-space: pre-line;
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-family: "GmarketSansMedium";
   line-height: 2;
   color: #fff;
@@ -2732,7 +2782,7 @@ body.mobile .perks .p-box .p-b-alignBox {
 }
 
 body.mobile .perks .p-box p {
-  font-size: 10px;
+  font-size: 2rem;
   white-space: pre-line;
   font-family: "GmarketSansMedium";
 }
@@ -3445,8 +3495,49 @@ body.pc .sec-cont .youtube-spec p:nth-of-type(4) {
   opacity: .5;
 }
 
-body.pc .sec-cont .youtube-spec p strong {
-  font-family: "GmarketSansBold";
+body.pc .sec-cont .youtube-spec p span {
+  display: inline-block;
+}
+
+body.pc .sec-cont .youtube-spec p.follow span span:nth-of-type(1) {
+  padding-right: 1rem;
+}
+
+body.pc .sec-cont .youtube-spec p.follow span span:nth-of-type(4) {
+  padding: 0 1rem;
+}
+
+body.pc .sec-cont .youtube-spec p.viewer span span:nth-of-type(3) {
+  padding-right: 1rem;
+}
+
+body.pc .sec-cont .youtube-spec p.viewer span span:nth-last-child(1) {
+  padding-left: 1rem;
+}
+
+body.pc .sec-cont .youtube-spec p.stack span span:nth-of-type(5) {
+  padding-right: 1rem;
+}
+
+body.pc .sec-cont .youtube-spec p.stack span span:nth-last-child(1) {
+  padding-left: 1rem;
+}
+
+body.pc .sec-cont .youtube-spec p .digit-con {
+  display: inline-block;
+  height: 6.5rem;
+  overflow: hidden;
+  vertical-align: top;
+  font-family: "GmarketSansMedium";
+}
+
+body.pc .sec-cont .youtube-spec p .digit-con strong {
+  display: block;
+  font-size: 5.2rem;
+  line-height: 6.5rem;
+  position: relative;
+  text-align: center;
+  top: 0;
 }
 
 body.pc #sec2 .s2-gl {

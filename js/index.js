@@ -89,9 +89,9 @@ window.addEventListener("DOMContentLoaded", function () {
 
   $('.blogContent .review div').each(function (idx, el) {
     $(el).css('background', 'url(' + reviewImg[idx] + ') no-repeat center');
-    reviewLeft += $(el).css('left')+' ';
-    reviewTop += $(el).css('top')+' ';
-    reviewZidx += $(el).css('z-index')+' ';
+    reviewLeft += $(el).css('left') + ' ';
+    reviewTop += $(el).css('top') + ' ';
+    reviewZidx += $(el).css('z-index') + ' ';
     rotationImg += $(el).css('background-image').match(/img\/[\w\d]+\.\jpg/g);
   })
 
@@ -128,25 +128,25 @@ window.addEventListener("DOMContentLoaded", function () {
   })
 
   //INNER MODAL OPEN============================================
-  function innerModal (){
-    $('.listCont .customer').each(function(idx,el){
-      $(el).on('click',function(){
+  function innerModal() {
+    $('.listCont .customer').each(function (idx, el) {
+      $(el).on('click', function () {
         $('.kakaoTalk').addClass('openClose');
         var imgUrl = $(this).find('.imgCont').css('background-image').match(/img\/[\w\d]+\.\jpg/g),
-            title = $(this).find('p').text();
+          title = $(this).find('p').text();
         $('.kakaoImg').css({
-          'background':'url("../'+imgUrl+'") top no-repeat',
-          'background-size':'cover'
+          'background': 'url("../' + imgUrl + '") top no-repeat',
+          'background-size': 'cover'
         })
         $('.kakaoModal').find('h2').text(title);
       })
     })
 
-    $('.close').on('click',function(){
+    $('.close').on('click', function () {
       $('.kakaoTalk').removeClass('openClose');
     })
 
-    $('.kakaoTalk').on('click',function(){
+    $('.kakaoTalk').on('click', function () {
       $('.kakaoTalk').removeClass('openClose');
     })
   }
@@ -167,7 +167,7 @@ window.addEventListener("DOMContentLoaded", function () {
         'top': '30px',
         'opacity': '0'
       });
-      setTimeout(function(){
+      setTimeout(function () {
         $('.blogContent .review div:nth-of-type(1)').css({
           'top': reviewTop[3],
           'left': reviewLeft[3],
@@ -183,7 +183,7 @@ window.addEventListener("DOMContentLoaded", function () {
           })
         })
         $('.blogContent .review').append($cut);
-      },250);
+      }, 250);
     }, 3000);
 
     if (isMobile()) {
@@ -272,28 +272,28 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 
   //NAVIGATION CLICK ===============================================>
-  $('.nav a:nth-of-type(1), .nav a:nth-of-type(2)').on('click',function(e){
+  $('.nav a:nth-of-type(1), .nav a:nth-of-type(2)').on('click', function (e) {
     e.preventDefault();
-      $('.profile-detail').addClass('open-modal');
-      $('html').css('overflow', 'hidden');
-      if ($(this).index() == 0) {
-        openBlog();
-        innerModal();
-      } else{
-        $('.alignCont').append(youtubeContent);
-        $('.profile-detail').css('background', '#ff416c');
-        $('.content-box .p-title h1').text('핀셋 유튜브 대표강사');
-        $('.content-box .p-title p').text('러셀')
-      }
+    $('.profile-detail').addClass('open-modal');
+    $('html').css('overflow', 'hidden');
+    if ($(this).index() == 0) {
+      openBlog();
+      innerModal();
+    } else {
+      $('.alignCont').append(youtubeContent);
+      $('.profile-detail').css('background', '#ff416c');
+      $('.content-box .p-title h1').text('핀셋 유튜브 대표강사');
+      $('.content-box .p-title p').text('러셀')
+    }
+    setTimeout(function () {
+      $('.bg-skew').addClass('active');
       setTimeout(function () {
-        $('.bg-skew').addClass('active');
+        fadeInContent();
         setTimeout(function () {
-          fadeInContent();
-          setTimeout(function () {
-            $('.closeBtn').addClass('rotate');
-          }, 500)
-        }, 200)
-      }, 500);
+          $('.closeBtn').addClass('rotate');
+        }, 500)
+      }, 200)
+    }, 500);
   })
 
   $('.profile').on('mousemove', function (e) {
@@ -560,5 +560,89 @@ window.addEventListener("DOMContentLoaded", function () {
         }, 500)
       }, 800)
     }
+
+    if ($('.youtube-spec p:nth-of-type(1)').hasClass('active')) {
+        onceUse();
+    }
+    if ($('.youtube-spec p:nth-of-type(2)').hasClass('active')) {
+        onceUse2();
+    }
+    if ($('.youtube-spec p:nth-of-type(3)').hasClass('active')) {
+        onceUse3();
+    }
   });
+
+  function once(fn, context){
+    var result;
+ 
+    return function() { 
+        if(fn) {
+            result = fn.apply(context || this, arguments);
+            fn = null;
+        }
+ 
+        return result;
+    };
+  }
+
+  var onceUse = once(function(){
+    $('.youtube-spec p:nth-of-type(1) span').each(function () {
+          Counter($(this));
+    });
+  })
+  var onceUse2 = once(function(){
+    $('.youtube-spec p:nth-of-type(2) span').each(function () {
+          Counter($(this));
+    });
+  })
+  var onceUse3 = once(function(){
+    $('.youtube-spec p:nth-of-type(3) span').each(function () {
+          Counter($(this));
+    });
+  })
+
+  function Counter(obj) {
+
+    // get the number
+    var number = obj.text();
+    obj.attr('data-number', number);
+
+    // clear the HTML element
+    obj.empty();
+
+    // create an array from the text, prepare to identify which characters in the string are numbers
+    var numChars = number.split("")
+    var numArray = [];
+    var setOfNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+    // for each number, create the animation elements
+    for (var i = 0; i < numChars.length; i++) {
+      if ($.inArray(parseInt(numChars[i], 10), setOfNumbers) != -1) {
+        obj.append('<span class="digit-con"><strong class="digit' + numArray.length + '">0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br></strong></span>');
+        numArray[numArray.length] = parseInt(numChars[i], 10);
+      } else {
+        obj.append('<span>' + numChars[i] + '</span>');
+      }
+    }
+
+    // determine the height of each number for the animation
+    var increment = obj.find('.digit-con').outerHeight();
+    var speed = 2000;
+
+    // animate each number
+    setTimeout(function(){
+    for (var i = 0; i < numArray.length; i++) {
+      obj.find('.digit' + i).animate({
+        top: -(increment * numArray[i])
+      }, Math.round(speed / (1 + (i * 0.2))));
+    }
+    }, 200);
+
+    // $("#animate").click(function(){
+    //   $('.youtube-spec strong:nth-of-type(1)').eq(0).text($('.number').attr('data-number'));
+    //   Counter($('.number').eq(0));
+    // });
+  }
+
+
 });
